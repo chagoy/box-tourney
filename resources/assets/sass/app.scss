@@ -1,0 +1,185 @@
+$darkgreen: #0b2027;
+$white: #fdffff;
+$alabama: #b10f2e;
+$light-alabama: #D33E43;
+$light-blue: #C5D5EA;
+$superior-blue: #759EB8;
+$dark: #191d32;
+$light: #282f44;
+
+a {
+	color: $alabama;
+	&:hover {
+		color: $darkgreen;
+	}
+}
+.navbar {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.hiddenElement {
+	display: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	margin-bottom: 120px;
+	font-family: 'Archivo Narrow', Helvetica Neue, Arial, sans-serif;
+}
+
+//navbar styling
+.navbar {
+	background-color: transparent;
+	height: 56px;
+	margin-bottom: 35px;
+	.navbar-center a {
+		color: #FDFFFF;	
+		font-size: 14px;
+		letter-spacing: 1.3px;
+	}
+	.navbar-center a:hover {
+		color: $alabama;
+	}
+	.navbar-section a:hover {
+		color: $alabama;
+	}
+}
+
+.navbar-brand {
+	color: #FDFFFF;
+}
+
+.btn {
+	color: $white;
+}
+
+.btn-alabama {
+	background-color: $alabama;
+	border: 1px solid $alabama;
+	color: $white;
+	&:hover {
+		background-color: $light-alabama;
+		border: 1px solid $light-alabama;
+		color: $white;
+	}
+	a {
+		color: $white;
+	}
+}
+
+.boxersTable_filter input {
+	border: 3px solid black;
+}
+
+.season-pass {
+	border-bottom: 3px solid $superior-blue;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.square { 
+	height: 150px;
+	width: 150px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	// display: bud;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	justify-content: flex-end;
+	opacity: 0.75;
+	filter: alpha(opacity=50);
+	&:hover {
+		transition-duration: 0.1s;
+		outline: 4px solid $alabama;
+		opacity: 1;
+		.name-bar {
+			display: block;
+		}
+	}
+	&:checked + label {
+		outline: 3px solid $alabama;
+		opacity: 1;
+		.name-bar {
+			display: block;
+		}
+	}
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+.inactive {
+	display: none;
+}
+
+.title {
+	background-color: $white;
+	opacity: 0.6;
+	width: 100%;
+	margin-top: 70%;
+	span {
+		color: $white;
+	}
+}
+
+.name-bar { 
+	display: none;
+}
+
+input[type=checkbox]:checked + label {
+	outline: 3px solid $alabama;
+	opacity: 1;
+}
+
+.similar-style {
+	list-style-type: none;
+}
+
+.title-div {
+	padding-top: 120px;
+	color: $white;
+}
+
+.title-text {
+	font-size: 50px;
+	letter-spacing: 2.3px;
+}
+
+html {
+	height: 100%;
+}
+
+#welcome {
+	min-height: 100%;
+    background: linear-gradient($light, $dark);
+}
+
+.justified-div {
+	z-index: -100;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	// max-width: 100%;
+	text-align: justify;
+	-moz-text-align-last: center;
+	text-align-last: center;
+	p {
+		font-size: 26px;
+	}
+}
+
+
+#rnavbar {
+	background: linear-gradient($dark, $light);
+}

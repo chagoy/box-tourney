@@ -1,0 +1,194 @@
+a {
+  color: #b10f2e;
+}
+
+a:hover {
+  color: #0b2027;
+}
+
+.navbar {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hiddenElement {
+  display: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  margin-bottom: 120px;
+  font-family: 'Archivo Narrow', Helvetica Neue, Arial, sans-serif;
+}
+
+.navbar {
+  background-color: transparent;
+  height: 56px;
+  margin-bottom: 35px;
+}
+
+.navbar .navbar-center a {
+  color: #FDFFFF;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+}
+
+.navbar .navbar-center a:hover {
+  color: #b10f2e;
+}
+
+.navbar .navbar-section a:hover {
+  color: #b10f2e;
+}
+
+.navbar-brand {
+  color: #FDFFFF;
+}
+
+.btn {
+  color: #fdffff;
+}
+
+.btn-alabama {
+  background-color: #b10f2e;
+  border: 1px solid #b10f2e;
+  color: #fdffff;
+}
+
+.btn-alabama:hover {
+  background-color: #D33E43;
+  border: 1px solid #D33E43;
+  color: #fdffff;
+}
+
+.btn-alabama a {
+  color: #fdffff;
+}
+
+.boxersTable_filter input {
+  border: 3px solid black;
+}
+
+.season-pass {
+  border-bottom: 3px solid #759EB8;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.square {
+  height: 150px;
+  width: 150px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  opacity: 0.75;
+  filter: alpha(opacity=50);
+}
+
+.square:hover {
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  outline: 4px solid #b10f2e;
+  opacity: 1;
+}
+
+.square:hover .name-bar {
+  display: block;
+}
+
+.square:checked + label {
+  outline: 3px solid #b10f2e;
+  opacity: 1;
+}
+
+.square:checked + label .name-bar {
+  display: block;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.inactive {
+  display: none;
+}
+
+.title {
+  background-color: #fdffff;
+  opacity: 0.6;
+  width: 100%;
+  margin-top: 70%;
+}
+
+.title span {
+  color: #fdffff;
+}
+
+.name-bar {
+  display: none;
+}
+
+input[type=checkbox]:checked + label {
+  outline: 3px solid #b10f2e;
+  opacity: 1;
+}
+
+.similar-style {
+  list-style-type: none;
+}
+
+.title-div {
+  padding-top: 120px;
+  color: #fdffff;
+}
+
+.title-text {
+  font-size: 50px;
+  letter-spacing: 2.3px;
+}
+
+html {
+  height: 100%;
+}
+
+#welcome {
+  min-height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#282f44), to(#191d32));
+  background: linear-gradient(#282f44, #191d32);
+}
+
+.justified-div {
+  z-index: -100;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.justified-div p {
+  font-size: 26px;
+}
+
+#rnavbar {
+  background: -webkit-gradient(linear, left top, left bottom, from(#191d32), to(#282f44));
+  background: linear-gradient(#191d32, #282f44);
+}
+
