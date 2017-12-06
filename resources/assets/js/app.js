@@ -17,6 +17,7 @@ window.Vue = require('vue');
 Vue.component('robbery', require('./components/Robbery.vue'));
 Vue.component('share-button', require('./components/ShareButton.vue'));
 Vue.component('boxer-select', require('./components/BoxerSelect.vue'));
+Vue.component('voting-buttons', require('./components/VotingButtons.vue'));
 
 const app = new Vue({
     el: '#app'
@@ -116,6 +117,7 @@ function generateAWinner(a, b) {
     for (var i = 0; i < 3; i++) {
         fight(a, b);
     }
+    console.log('a knockout = ' + aknockout + ' and b knockout = ' + bknockout);
     if (aknockout > 0 || acard > bcard) {
         winner = a.name;
         winnerimage = a.image;
@@ -132,7 +134,6 @@ function generateAWinner(a, b) {
 }
 
 function cleanScore(a) {
-    console.log(a.sort());
     a.forEach(function(el) {
         scorecard += el + ' ';
     })
@@ -212,6 +213,7 @@ $("#round1fight3").on("click", function() {
             document.getElementById("round2seed3method").innerText = winnermethod;
         }
     }
+    
     if (boxers[2]["name"] == winner) {
         round2seed3 = boxers[2];
     } else {
@@ -301,8 +303,6 @@ $("#round2fight1").on("click", function() {
     $(".round3Box-1").show("slow");
 })
 $("#round2fight2").on("click", function() {
-    console.log(round2seed2);
-    console.log(round2seed3);
     generateAWinner(round2seed2, round2seed3);
     if (aknockout >= 1) {
         $("#round3seed2image").attr("src", round2seed2.image);
@@ -317,12 +317,13 @@ $("#round2fight2").on("click", function() {
         document.getElementById("round3seed2name").innerHTML = winner;
         document.getElementById("round3seed2method").innerHTML = winnermethod;
     }
+    
     if (round2seed2["name"] == winner) {
         finalseed2 = round2seed2;
     } else {
         finalseed2 = round2seed3;
     }
-    console.log(finalseed2.name);
+    
     resetVariables();
     checkForFinal();
     $("#round2fight2").addClass("hiddenElement");

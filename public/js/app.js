@@ -1099,6 +1099,7 @@ window.Vue = __webpack_require__(36);
 Vue.component('robbery', __webpack_require__(39));
 Vue.component('share-button', __webpack_require__(42));
 Vue.component('boxer-select', __webpack_require__(45));
+Vue.component('voting-buttons', __webpack_require__(51));
 
 var app = new Vue({
     el: '#app'
@@ -1198,6 +1199,7 @@ function generateAWinner(a, b) {
     for (var i = 0; i < 3; i++) {
         fight(a, b);
     }
+    console.log('a knockout = ' + aknockout + ' and b knockout = ' + bknockout);
     if (aknockout > 0 || acard > bcard) {
         winner = a.name;
         winnerimage = a.image;
@@ -1214,7 +1216,6 @@ function generateAWinner(a, b) {
 }
 
 function cleanScore(a) {
-    console.log(a.sort());
     a.forEach(function (el) {
         scorecard += el + ' ';
     });
@@ -1294,6 +1295,7 @@ $("#round1fight3").on("click", function () {
             document.getElementById("round2seed3method").innerText = winnermethod;
         }
     }
+
     if (boxers[2]["name"] == winner) {
         round2seed3 = boxers[2];
     } else {
@@ -1382,8 +1384,6 @@ $("#round2fight1").on("click", function () {
     $(".round3Box-1").show("slow");
 });
 $("#round2fight2").on("click", function () {
-    console.log(round2seed2);
-    console.log(round2seed3);
     generateAWinner(round2seed2, round2seed3);
     if (aknockout >= 1) {
         $("#round3seed2image").attr("src", round2seed2.image);
@@ -1398,12 +1398,13 @@ $("#round2fight2").on("click", function () {
         document.getElementById("round3seed2name").innerHTML = winner;
         document.getElementById("round3seed2method").innerHTML = winnermethod;
     }
+
     if (round2seed2["name"] == winner) {
         finalseed2 = round2seed2;
     } else {
         finalseed2 = round2seed3;
     }
-    console.log(finalseed2.name);
+
     resetVariables();
     checkForFinal();
     $("#round2fight2").addClass("hiddenElement");
@@ -43502,6 +43503,120 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(52)
+/* template */
+var __vue_template__ = __webpack_require__(53)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/VotingButtons.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-bab8aa9a", Component.options)
+  } else {
+    hotAPI.reload("data-v-bab8aa9a", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            upvote: false,
+            down: false
+        };
+    },
+
+
+    methods: {
+        submitVote: function submitVote() {
+            if (this.upvote == false) {
+                this.upvote = true;
+            } else {
+                return this.upvote = false;
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("button", { staticClass: "btn ", on: { click: _vm.submitVote } }, [
+      _vm._v("👍")
+    ]),
+    _vm._v(" "),
+    _c("button", { staticClass: "btn { down ? '' : 'disabled }" }, [
+      _vm._v("🖕")
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-bab8aa9a", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

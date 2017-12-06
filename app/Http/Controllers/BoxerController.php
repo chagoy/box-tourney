@@ -34,6 +34,16 @@ class BoxerController extends Controller
     	return view('boxers.show', compact('boxer', 'similar'));
     }
 
+    public function pending()
+    {
+        $boxers = Boxer::orderBy('id', 'asc')
+                    ->where('approved', 0)
+                    ->get()
+                    ->sortBy('name');
+                    
+        return view('boxers.pending', compact('boxers'));
+    }
+
     public function create()
     {
         $weights = Weight::get();

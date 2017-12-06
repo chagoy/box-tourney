@@ -30,3 +30,5 @@ Route::get('/seasonpass', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/pending', 'BoxerController@pending');

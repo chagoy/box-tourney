@@ -3,6 +3,7 @@
 @section ('content')
 
 	<div class="container">
+		<h5><a href="/pending">See boxers waiting for admin approval (and vote for the good ones)</a></h5>
 		<table class="table table-stripe table-hover" id="boxersTable">
 			<thead>
 				<tr>
